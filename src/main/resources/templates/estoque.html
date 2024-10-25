@@ -1,0 +1,27 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+            <tr th:each="item : ${itens}">
+                <td th:text="${item.nome}"></td>
+                <td th:text="${item.descricao}"></td>
+                <td th:text="${item.quantidade}"></td>
+                <td>
+                    <a th:href="@{/admin/editar/{id}(id=${item.id})}">Editar</a>
+                    <a th:href="@{/admin/remover/{id}(id=${item.id})}">Remover</a>
+                </td>
+            </tr>
+        </table>
+        
+        
+    </body>
+</html>
